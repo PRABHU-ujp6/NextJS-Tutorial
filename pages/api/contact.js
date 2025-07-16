@@ -29,12 +29,10 @@ export default async function handler(req, resp) {
     // console.log(newMessage);
     let client;
 
-    let connectionString = `mongodb+srv://Akan:107056Ujp@cluster0.x7e68.mongodb.net/${process.env.mongodb_database}`
+    let connectionString = `mongodb+srv://${process.env.mongodb_username}:${process.env.mongodb_password}@${process.env.mongodb_cluster}.x7e68.mongodb.net/${process.env.mongodb_database}`;
 
     try {
-      client = await MongoClient.connect(
-        connectionString
-      );
+      client = await MongoClient.connect(connectionString);
     } catch (error) {
       resp.status(500).json({
         message: "Could Not Connect...",
