@@ -29,7 +29,7 @@ export default async function handler(req, resp) {
     // console.log(newMessage);
     let client;
 
-    let connectionString = `mongodb://localhost:27017/${process.env.mongodb_database}`
+    let connectionString = `mongodb+srv://Akan:107056Ujp@cluster0.x7e68.mongodb.net/${process.env.mongodb_database}`
 
     try {
       client = await MongoClient.connect(
